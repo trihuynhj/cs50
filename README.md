@@ -1,0 +1,2 @@
+## This is the repo to store all the CS50 assignments (labs and problem sets)
+Sometimes my commits from the CS50 IDE would disappear from my GitHub and I didn't figure out what the issue was. So I created this repo in order to log in the progress of my CS50 course.
