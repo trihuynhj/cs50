@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: It took much longer for the program complete sorting random than sorted arrays.
+
+sort2 uses: merge sort
+
+How do you know?: Its performance in every test is way better than sort1 and sort3.
+
+sort3 uses: selection sort
+
+How do you know?: It is the slowest when sorting sorted arrays, and it took relatively similar time to complete sorting random and sorted arrays.
