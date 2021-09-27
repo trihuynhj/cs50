@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            // Wait for the DOM to finish loading before doing any checking
+            document.addEventListener("DOMContentLoaded", function() {
+
+                // Question 1
+                // When correct answer is clicked on
+                let correct = document.querySelector(".correct");
+                correct.addEventListener("click", function() {
+                    correct.style.backgroundColor = "green";
+                    document.querySelector("#feedback-1").innerHTML = "Correct!";
+                })
+                // When incorrect answer is clicked on
+                let incorrect = document.querySelectorAll(".incorrect");
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener("click", function() {
+                        incorrect[i].style.backgroundColor = "red";
+                        document.querySelector("#feedback-1").innerHTML = "Incorrect";
+                    })
+                }
+
+                // Question 2
+                let checkAnswer = document.querySelector(".check-answer");
+                checkAnswer.addEventListener("click", function() {
+                    var textAnswer = document.querySelector(".text-answer");
+                    // When the user input answer is correct (including "yes" in the answer)
+                    if (textAnswer.value.toLowerCase().includes("yes")) {
+                        textAnswer.style.backgroundColor = "green";
+                        document.querySelector("#feedback-2").innerHTML = "Correct!";
+                    }
+                    // When the user input answer is incorrect (including "no" in the answer)
+                    else if (textAnswer.value.toLowerCase().includes("no")) {
+                        textAnswer.style.backgroundColor = "red";
+                        document.querySelector("#feedback-2").innerHTML = "Incorrect";
+                    }
+                })
+            })
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section" id="section-1">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What is the language most used for client-side programming? </h3>
+                <!-- TODO: Add multiple choice question here -->
+                <button class="incorrect">C/C++</button>
+                <button class="incorrect">Java</button>
+                <button class="incorrect">Python</button>
+                <button class="correct">JavaScript</button>
+
+                <p id="feedback-1"></p>
+            </div>
+
+            <div class="section" id="section-2">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>JavaScript is a loosely typed languague, yes or no?</h3>
+                <!-- TODO: Add free response question here -->
+                <input class="text-answer" type="text">
+                <button class="check-answer">Check Answer</button>
+
+                <p id="feedback-2"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
