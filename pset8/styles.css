@@ -1,0 +1,63 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #86c6a0;
+    border-radius: 10px;
+}
+
+header h2 {
+    text-decoration: underline;
+}
+
+.nav-bar {
+    list-style: none;
+    margin-right: 0;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 3px 10px;
+}
+
+.nav-bar li a {
+    color: darkblue;
+    transition: all 0.4s ease 0s;
+}
+
+.nav-bar li a:hover {
+    color: darkred;
+}
+
+main {
+    position: relative;
+}
+
+main h3 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+.response-list {
+    list-style: none;
+}
+
+.response {
+    color: darkred;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+footer {
+    font-size: 0.9rem;
+}
