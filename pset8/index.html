@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- This is to link the Bootstrap library -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <!-- This is to link the CSS file -->
+        <link href="styles.css" rel="stylesheet">
+
+        <!-- This is to link the JavaScript file -->
+        <script src="script.js"></script>
+
+        <!-- This is to link the icon library (icons used in contact links) -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+
+        <title>Main Page</title>
+    </head>
+    <body class="container">
+        <header class="container fixed-top">
+            <h2>Tri Huynh</h2>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="#sec-pages">Pages</a></li>
+                    <li><a href="#sec-text">First Section</a></li>
+                    <li><a href="#sec-form">Second Section</a></li>
+                    <li><a href="#sec-javascript">Third Section</a></li>
+                </ul>
+            </nav>
+            <a href="#sec-contact"><button class="btn btn-danger">Contact</button></a>
+        </header>
+        <main>
+            <h3>Welcome to my webpage!</h3>
+            <section class="zero-section" id="sec-pages">
+                <h4>Pages</h4>
+                <p>You can visit my other pages using the following links:</p>
+                <ul>
+                    <li><a href="page1.html">No. 1 page</a></li>
+                    <li><a href="page2.html">No. 2 page</a></li>
+                    <li><a href="page3.html">No. 3 page</a></li>
+                </ul>
+            </section>
+            <hr>
+            <section class="first-section" id="sec-text">
+                <h4>First Section</h4>
+                <article>
+                    <p><b>Lorem ipsum dolor!</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p>
+                    <p>
+                        <code>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </code>
+                    </p>
+                    <p>
+                        <img src="https://www.jrff.co.jp/seabest/wp-content/uploads/woocommerce-placeholder-300x300.png" alt="This is a placeholder image">
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <mark>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</mark>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <u>Duis aute irure dolor in reprehenderit in</u> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit:
+                        <ol>
+                            <li>Sed do eiusmod tempor</li>
+                            <li>Incididunt ut labore</li>
+                            <li>Et dolore magna aliqua</li>
+                        </ol>
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <i> Ut enim ad minim veniam</i>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </article>
+            </section>
+            <hr>
+            <section class="second-section" id="sec-form">
+                <h4>Second Section</h4>
+                <p>
+                    Answer the questions in this form then click submit and we will respond to you in the Third Section.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <label for="question-1">Question 1:</label>
+                        <input type="text" name="question-1" id="q1" class="form-control" placeholder="Enter text here">
+                    </div>
+                    <div class="form-group">
+                        <label for="question-2">Question 2:</label>
+                        <input type="email" name="question-2" id="q2" class="form-control" placeholder="Enter email here">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">Question 3:</div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="question-3" class="form-check-input" id="answer-1" value="Answer One">
+                            <label class="form-check-label" for="answer-1">Answer 1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="question-3" class="form-check-input" id="answer-2" value="Answer Two">
+                            <label class="form-check-label" for="answer-2">Answer 2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="question-3" class="form-check-input" id="answer-3" value="Answer Three">
+                            <label class="form-check-label" for="answer-3">Answer 3</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">Question 4:</div>
+                        <div class="form-check form-check-inline">
+                             <input type="checkbox" name="question-4" class="form-check-input" id="item-1" value="Item One">
+                            <label class="form-check-label" for="item-1">Item 1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="question-4" class="form-check-input" id="item-2" value="Item Two">
+                            <label class="form-check-label" for="item-2">Item 2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="question-4" class="form-check-input" id="item-3" value="Item Three">
+                            <label class="form-check-label" for="item-3">Item 3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="question-4" class="form-check-input" id="item-4" value="Item Four">
+                            <label class="form-check-label" for="item-4">Item 4</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button href="#" type="button" class="btn btn-primary" id="btn1">Submit</button>
+                    </div>
+                </form>
+            </section>
+            <hr>
+            <section class="third-section" id="sec-javascript">
+                <h4>Third Section</h4>
+                <p>Our responses will appear below in this section once you click the submit button in the Second Section.</p>
+                <ul class="response-list">
+                    <li><p class="response" id="response-question-1"></p></li>
+                    <li><p class="response" id="response-question-2"></p></li>
+                    <li><p class="response" id="response-question-3"></p></li>
+                    <li><p class="response" id="response-question-4"></p></li>
+                </ul>
+            </section>
+            <hr>
+            <section class="fourth-section" id="sec-contact">
+                <h4>Contact</h4>
+                You can reach me via:
+                <div class="contact-link">
+                    <a href="#" class="contact-info" target="_blank"><i class="fas fa-at"></i> Email</a>
+                    <a href="https://www.github.com" class="contact-info" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.facebook.com" class="contact-info" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.twitter.com" class="contact-info" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://www.instagram.com" class="contact-info" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </section>
+        <footer>
+            <hr>
+            <p>Disclaimer: This page's content is fake and is used only for CS50 problem set submission.<br>&copy; Created by Tri Huynh, 2021.</p>
+        </footer>
+    </body>
+</html>
