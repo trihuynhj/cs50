@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <section id="stock-info">
+        <h4>PORTFOLIO</h4>
+        <table class="table">
+            <thead>
+                <th scope="col">Stock</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Total Value</th>
+            </thead>
+            <tbody>
+                {% for stock in portfolio %}
+
+                    <tr>
+                        <th>{{ stock.symbol }}</th>
+                        <th>{{ stock.name }}</th>
+                        <th>{{ stock.shares }}</th>
+                        <th>{{ stock.currentPrice | usd }}</th>
+                        <th>{{ stock.value | usd }}</th>
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <hr>
+    <section id="user-info">
+        <h4>ACCOUNT BALANCE</h4>
+        <table class="table" id="user-info">
+            <thead>
+                <th scope="col">Cash Balance</th>
+                <th scope="col">Grand Total</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>{{ cash | usd }}</th>
+                    <th>{{ grandtotal | usd }}</th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+{% endblock %}
