@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Latest Price</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Request Time</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{ stock.name }}</th>
+                <th>{{ stock.price | usd }}</th>
+                <th>{{ stock.symbol }}</th>
+                <th>{{ date }}</th>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}
