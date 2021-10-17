@@ -45,3 +45,25 @@ db = SQL("sqlite:///finance.db")
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
     raise RuntimeError("API_KEY not set")
+
+
+@app.route("/")
+@login_required
+def index():
+    """Show portfolio of stocks"""
+
+    # Get the info from database
+    portfolio = db.execute("SELECT * FROM portfolio WHERE user_id = ?", session["user_id"])
+    userinfo = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+
+    # Get the current price of each stock from API and calculate the total value of stocks
+    totalval = 0
+    for stock in portfolio:
+        stock["currentPrice"] = lookup(stock["symbol"])["price"]
+        stock["value"] = stock["shares"] * stock["currentPrice"]
+        totalval += stock["value"]
+
+    cash = int(userinfo[0]["cash"])
+    grandtotal = cash + totalval
+
+    return render_template("index.html", portfolio=portfolio, cash=cash, grandtotal=grandtotal)
