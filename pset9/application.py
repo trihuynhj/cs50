@@ -91,7 +91,7 @@ def buy():
             return apology("number of shares must be a positive integer", 400)
 
         numshares = int(numshares)
-        
+
         # Process the buy request
         stock = lookup(symbol)
         date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
@@ -107,3 +107,20 @@ def buy():
 
         # Update the user's cash balance in users TABLE
         db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", stock["price"] * numshares, session["user_id"])
+
+         # Update the user's portfolio in portfolio TABLE
+        # If the symbol already exists in portfolio, update its shares
+        if db.execute("SELECT symbol FROM portfolio WHERE user_id = ? AND symbol = ?", session["user_id"], stock["symbol"]):
+            db.execute("UPDATE portfolio SET shares = shares + ? WHERE user_id = ? AND symbol = ?",
+                       numshares, session["user_id"], stock["symbol"])
+        # If the symbol does not exist, insert it into the portfolio
+        else:
+            db.execute("INSERT INTO portfolio (user_id, name, symbol, shares) VALUES (?, ?, ?, ?)",
+                       session["user_id"], stock["name"], stock["symbol"], numshares)
+
+        # Redirect user to the main page
+        return redirect("/")
+
+    else:
+        return render_template("buy.html")
+
