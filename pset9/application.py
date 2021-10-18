@@ -67,3 +67,27 @@ def index():
     grandtotal = cash + totalval
 
     return render_template("index.html", portfolio=portfolio, cash=cash, grandtotal=grandtotal)
+
+
+@app.route("/buy", methods=["GET", "POST"])
+@login_required
+def buy():
+    """Buy shares of stock"""
+
+    if request.method == "POST":
+
+        # Get the stock info from the form (user input via POST)
+        symbol = request.form.get("symbol")
+        numshares = request.form.get("shares")
+
+        # Verify the stock info
+        if not symbol:
+            return apology("must provide a stock's symbol", 400)
+        if not numshares:
+            return apology("must provide a number of shares", 400)
+        if not lookup(symbol):
+            return apology("stock not found", 400)
+        if not numshares.isnumeric() or float(numshares) % 1 > 0 or int(numshares) <= 0:
+            return apology("number of shares must be a positive integer", 400)
+
+        numshares = int(numshares)
