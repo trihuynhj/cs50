@@ -91,3 +91,19 @@ def buy():
             return apology("number of shares must be a positive integer", 400)
 
         numshares = int(numshares)
+        
+        # Process the buy request
+        stock = lookup(symbol)
+        date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
+        usercash = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+
+        # Abort if user cannot afford the number of shares at current price
+        if stock["price"] * numshares > usercash:
+            return apology("not enough money to proceed", 400)
+
+        # Register the BUY request in history TABLE (BUY means trade = 0)
+        db.execute("INSERT INTO history (user_id, trade, name, symbol, price, shares, time) VALUES (?, 0, ?, ?, ?, ?, ?)",
+                   session["user_id"], stock["name"], stock["symbol"], stock["price"], numshares, date)
+
+        # Update the user's cash balance in users TABLE
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", stock["price"] * numshares, session["user_id"])
