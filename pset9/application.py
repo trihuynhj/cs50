@@ -124,3 +124,13 @@ def buy():
     else:
         return render_template("buy.html")
 
+
+@app.route("/history")
+@login_required
+def history():
+    """Show history of transactions"""
+
+    history = db.execute("SELECT * FROM history WHERE user_id = ?", session["user_id"])
+    return render_template("history.html", history=history)
+
+
