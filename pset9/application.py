@@ -187,9 +187,12 @@ def quote():
     """Get stock quote."""
 
     if request.method == "POST":
-    if not lookup(request.form.get("symbol")):
-        return apology("stock not found", 400)
+        if not lookup(request.form.get("symbol")):
+            return apology("stock not found", 400)
 
-    stock = lookup(request.form.get("symbol"))
-    date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
-    return render_template("quoted.html", stock=stock, date=date)
+        stock = lookup(request.form.get("symbol"))
+        date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
+        return render_template("quoted.html", stock=stock, date=date)
+    else:
+    return render_template("quote.html")
+
