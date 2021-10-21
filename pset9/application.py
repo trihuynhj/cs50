@@ -194,9 +194,20 @@ def quote():
         date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
         return render_template("quoted.html", stock=stock, date=date)
     else:
-    return render_template("quote.html")
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
+
+        # When getting a POST method, check and process the user registration info
+    if request.method == "POST":
+        if not request.form.get("username"):
+            return apology("must provide a username", 400)
+        if not request.form.get("password"):
+            return apology("must provide a password", 400)
+        if not request.form.get("confirmation"):
+            return apology("must provide a password confirmation", 400)
+        if db.execute("SELECT username FROM users WHERE username = ?", request.form.get("username")):
+            return apology("username has already been registered", 400)
