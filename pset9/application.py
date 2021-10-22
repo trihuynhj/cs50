@@ -213,3 +213,8 @@ def register():
             return apology("username has already been registered", 400)
         if request.form.get("password") != request.form.get("confirmation"):
             return apology("The passwords do not match", 400)
+        
+        user_username = request.form.get("username")
+        user_hash = generate_password_hash(request.form.get("password"))
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", user_username, user_hash)
+    
