@@ -230,4 +230,8 @@ def register():
 def sell():
     """Sell shares of stock"""
 
-    
+    if request.method == "POST":
+        # Get the sell request info from user input
+        symbol = request.form.get("symbol")
+        numshares = request.form.get("shares")
+        portfolio = db.execute("SELECT * FROM portfolio WHERE user_id = ?", session["user_id"])
