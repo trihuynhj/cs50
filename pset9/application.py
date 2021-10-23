@@ -255,5 +255,8 @@ def sell():
                 # If there is only 1 share left, delete that row from portfolio
                 elif stock["shares"] == 1:
                     db.execute("DELETE FROM portfolio WHERE user_id = ? AND symbol = ?", session["user_id"], stock["symbol"])
-                
+                # Otherwise, update the number of shares left in portfolio
+                else:
+                    db.execute("UPDATE portfolio SET shares = shares - ? WHERE user_id = ? AND symbol = ?",
+                               numshares, session["user_id"], stock["symbol"])
                 
