@@ -245,3 +245,15 @@ def sell():
             return apology("number of shares must be a positive integer", 400)
         numshares = int(numshares)
         symbol = symbol.upper()
+
+        for stock in portfolio:
+            # Check if the sell stock is in portfolio, then process the sell request if found
+            if stock["symbol"] == symbol:
+                # Apologize if number of shares to sell is larger than actually in portfolio
+                if stock["shares"] < numshares:
+                    return apology("you don't have that many shares to sell", 400)
+                # If there is only 1 share left, delete that row from portfolio
+                elif stock["shares"] == 1:
+                    db.execute("DELETE FROM portfolio WHERE user_id = ? AND symbol = ?", session["user_id"], stock["symbol"])
+                
+                
