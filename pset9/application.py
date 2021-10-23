@@ -263,3 +263,11 @@ def sell():
                 # Update the user's cash balance
                 sellvalue = lookup(stock["symbol"])["price"]
                 db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", sellvalue * numshares, session["user_id"])
+
+                # Update the transaction log (history TABLE) (SELL means trade = 1)
+                date = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
+                db.execute("INSERT INTO history (user_id, trade, name, symbol, price, shares, time) VALUES (?, 1, ?, ?, ?, ?, ?)",
+                           session["user_id"], stock["name"], stock["symbol"], sellvalue, numshares, date)
+
+                # Once done, redirect user to index page
+                return redirect("/")
