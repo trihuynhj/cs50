@@ -260,3 +260,6 @@ def sell():
                     db.execute("UPDATE portfolio SET shares = shares - ? WHERE user_id = ? AND symbol = ?",
                                numshares, session["user_id"], stock["symbol"])
                 
+                # Update the user's cash balance
+                sellvalue = lookup(stock["symbol"])["price"]
+                db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", sellvalue * numshares, session["user_id"])
