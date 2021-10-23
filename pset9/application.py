@@ -235,3 +235,13 @@ def sell():
         symbol = request.form.get("symbol")
         numshares = request.form.get("shares")
         portfolio = db.execute("SELECT * FROM portfolio WHERE user_id = ?", session["user_id"])
+
+         # Verify the sell request
+        if not symbol:
+            return apology("must provide a stock's symbol", 400)
+        if not numshares:
+            return apology("must provide a number of shares", 400)
+        if not numshares.isnumeric() or float(numshares) % 1 > 0 or int(numshares) < 0:
+            return apology("number of shares must be a positive integer", 400)
+        numshares = int(numshares)
+        symbol = symbol.upper()
