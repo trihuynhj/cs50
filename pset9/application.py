@@ -274,3 +274,11 @@ def sell():
 
         # If stock not found in portfolio, apologize to user
         return apology("stock not in portfolio", 400)
+
+    # Otherwise (received a GET method), render the sell page for user input
+    else:
+        # Get the stocks from portfolio to render the select field in sell page
+        portfolio = db.execute("SELECT * FROM portfolio WHERE user_id = ?", session["user_id"])
+        return render_template("sell.html", portfolio=portfolio)
+
+
