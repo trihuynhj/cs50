@@ -6,3 +6,6 @@ Sometimes my commits from the CS50 IDE would disappear from my GitHub and I didn
 #### Description:
 ###### PicPrankCS50 is a simple web application built with Python (Flask framework) on the server side, HTML/CSS and some basic JavaScript on the client side. The program also utilizes the SerpAPI for Google Image Search engine, Python's SMTP library for sending email and some other minor libraries.
 ###### PicPrankCS50 allows users to enter a search keyword and an email address. It will randomly choose an image from the results of the search and send it to the provided email address using its own email (picprank.cs50@gmail.com). Users will not use their own email account to send images (for security reasons), but will be asked to register for an account to use the service. Moreoever, as there is limit to the free plan of the SerpAPI services, each user will only be allowed 10 searches. After than, user will need to register for another account to continue using the service (no limit to the number of accounts one user can register).
+#### About Me:
+###### My name is Tri Huynh. I'm from Vietnam, but currently living in Tokyo, Japan.
+###### You can reach me via my GitHub at <https://github.com/trihuynhj>.
