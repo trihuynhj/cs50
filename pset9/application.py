@@ -271,3 +271,6 @@ def sell():
 
                 # Once done, redirect user to index page
                 return redirect("/")
+
+        # If stock not found in portfolio, apologize to user
+        return apology("stock not in portfolio", 400)
