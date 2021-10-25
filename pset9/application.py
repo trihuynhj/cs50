@@ -282,3 +282,10 @@ def sell():
         return render_template("sell.html", portfolio=portfolio)
 
 
+def errorhandler(e):
+    """Handle error"""
+    if not isinstance(e, HTTPException):
+        e = InternalServerError()
+    return apology(e.name, e.code)
+
+
