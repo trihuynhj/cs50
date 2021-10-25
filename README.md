@@ -1,16 +1,14 @@
 # Harvard's CS50 Problem Sets & Labs
 #### Because the private cs50 repository is configured to branch out after every problem set, my progress was not properly tracked on GitHub. So I created this local repository so that the commits can be recognized by GitHub.
 
-# PICPRANKCS50
-1. Video Demo: <https://youtu.be/QEzhvrqwjpQ>
+## PICPRANKCS50
+1. **Video Demo**: <https://youtu.be/QEzhvrqwjpQ>
 
-2. Description:\
-    
-    Implementation: PicPrankCS50 is a simple web application built with Python (Flask framework) on the server side, HTML/CSS and some basic JavaScript on the client side. The program also utilizes the SerpAPI for Google Image Search engine, Python's SMTP library for sending email and some other minor libraries. Admittedly, I took the inspiration from Problem Set 9 (Finance) for the creation of this program. I utilized the MVC (Model-View-Controller) design pattern and some initialization code to get the program started, as I wanted to focus on the implementation of the core idea (which is explained below). I hope that it is not against the rule. Also, a big thank you to the CS50 Staff for their awesome and super-easy-to-use CS50 IDE, which comes with Python, HTML/CSS, JavaScript and also the useful SQLite. Without it, I could not have finished this project.
-    Functionality: PicPrankCS50 allows users to enter a search keyword and an email address. It will randomly choose an image from the results of the search and send it to the provided email address using its own email (picprank.cs50@gmail.com). Users will not use their own email account to send images (for security reasons), but will be asked to register for an account to use the service. Moreoever, as there is limit to the free plan of the SerpAPI services, each user will only be allowed 10 searches. After than, user will need to register for another account to continue using the service (no limit to the number of accounts one can register).
+2. **Description**:
+    - Implementation: PicPrankCS50 is a simple web application built with Python (Flask framework) on the server side, HTML/CSS and some basic JavaScript on the client side. The program also utilizes the SerpAPI for Google Image Search engine, Python's SMTP library for sending email and some other minor libraries. Admittedly, I took the inspiration from Problem Set 9 (Finance) for the creation of this program. I utilized the MVC (Model-View-Controller) design pattern and some initialization code to get the program started, as I wanted to focus on the implementation of the core idea (which is explained below). I hope that it is not against the rule. Also, a big thank you to the CS50 Staff for their awesome and super-easy-to-use CS50 IDE, which comes with Python, HTML/CSS, JavaScript and also the useful SQLite. Without it, I could not have finished this project.
+    - Functionality: PicPrankCS50 allows users to enter a search keyword and an email address. It will randomly choose an image from the results of the search and send it to the provided email address using its own email (picprank.cs50@gmail.com). Users will not use their own email account to send images (for security reasons), but will be asked to register for an account to use the service. Moreoever, as there is limit to the free plan of the SerpAPI services, each user will only be allowed 10 searches. After than, user will need to register for another account to continue using the service (no limit to the number of accounts one can register).
 
-3. Implementation Detail:\
-    
+3. **Implementation Detail**:
     - application.py: This file contains all the code that sets up and controls behaviors of the program. It is implemented with the Flask framework (including Flask's Session for user registration, login/logout). I took the inspiration from Problem Set 9 (Finance) and reused some of its initialization code in this file. As the main part, it governs the functionality of all HTML pages (from the templates folder, detail for each page is explained below). It also inherits from Finance other essential code such as generate_password_hash, check_password_hash, error handling etc.
     
     - helpers.py: Similar to the file with the same name in Problem Set 9, this file’s purpose is to provide some helper functions to the application.py file. Declaring helper functions separately helps with code organizing and coherence.
@@ -42,6 +40,5 @@
         - test3.py: A tiny program to test Python's random module.
         - test4.py: A tiny program to test Python's requests module.
 
-4. About Me:\
-    
-    My name is Tri Huynh. I'm originally from Vietnam, but currently living in Tokyo, Japan. You can reach me via my GitHub at <https://github.com/trihuynhj>.
+4. **About Me**:
+    - My name is Tri Huynh. I'm originally from Vietnam, but currently living in Tokyo, Japan. You can reach me via my GitHub at <https://github.com/trihuynhj>.
