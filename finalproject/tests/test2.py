@@ -20,3 +20,8 @@ params = {
     "tbm": "isch",                  # Image Search
     "api_key": API_KEY
 }
+
+
+search = GoogleSearch(params)
+results = search.get_dict()
+meta = requests.get(f"https://serpapi.com/account?api_key={API_KEY}")
