@@ -25,3 +25,11 @@ params = {
 search = GoogleSearch(params)
 results = search.get_dict()
 meta = requests.get(f"https://serpapi.com/account?api_key={API_KEY}")
+
+five_results = []
+
+for i in range(0, 5):
+    five_results.append(results["images_results"][i]["title"])
+
+print(five_results)
+print(meta.json())
