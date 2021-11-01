@@ -2,23 +2,20 @@ CREATE TABLE users (
     id INTEGER, 
     username TEXT NOT NULL, 
     hash TEXT NOT NULL, 
-    cash NUMERIC NOT NULL DEFAULT 10000.00, 
+    search_allowed INTEGER DEFAULT 10, 
     PRIMARY KEY(id));
 CREATE UNIQUE INDEX username ON users (username);
 
-CREATE TABLE portfolio (
-    user_id INTEGER, 
-    name TEXT NOT NULL, 
-    symbol TEXT NOT NULL, 
-    shares INTEGER, 
+CREATE TABLE search_history (
+    user_id INTEGER,
+    keyword TEXT NOT NULL,
+    receiver_email TEXT NOT NULL,
+    safesearch INTEGER DEFAULT 1,
+    result_position INTEGER,
+    result_title TEXT NOT NULL,
+    result_link TEXT NOT NULL,
+    result_original TEXT NOT NULL,
+    result_thumbnail TEXT NOT NULL,
+    time TEXT NOT NULL,
     FOREIGN KEY(user_id) REFERENCES users(id));
 
-CREATE TABLE history (
-    user_id INTEGER, 
-    trade INTEGER, 
-    name TEXT NOT NULL, 
-    symbol TEXT NOT NULL, 
-    shares INTEGER, 
-    price NUMERIC NOT NULL, 
-    time TEXT NOT NULL, 
-    FOREIGN KEY(user_id) REFERENCES users(id));
