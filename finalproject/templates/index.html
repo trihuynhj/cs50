@@ -8,7 +8,11 @@
 
     <div class="container main-page">
         <section class="account">
-            
+            <h4><u>ACCOUNT INFORMATION</u></h4>
+            <ul class="account-info">
+                <li><b>Account ID</b>: {{ user.username }}</li>
+                <li><b>Number of searches left</b>: <span style="color:red">{{ user.search_allowed }}</span></li>
+            </ul>
         </section>
 
         <section class="history table-responsive">
