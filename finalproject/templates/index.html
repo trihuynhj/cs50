@@ -29,6 +29,25 @@
                     <th scope="col">Image</th>
                     <th scope="col">Source URL</th>
                 </thead>
+                <tbody>
+                    {% for response in responses %}
+
+                        <tr>
+                            <td id="table-item">{{ loop.index }}</td>
+                            <td id="table-item">{{ response.time }}</td>
+                            <td id="table-item">"{{ response.keyword }}"</td>
+                            <td id="table-item">{{ response.receiver_email }}</td>
+                            {% if response.safesearch == 1 %}
+                                <td id="table-item">On</td>
+                            {% else %}
+                                <td id="table-item">Off</td>
+                            {% endif %}
+                            <td id="table-item"><a href="{{ response.result_original }}" target="_blank"><img style="width:80px" src="{{ response.result_thumbnail }}"></a></td>
+                            <td id="table-item"><a href="{{ response.result_link }}" target="_blank">Click to open</a></td>
+                        </tr>
+
+                    {% endfor %}
+                </tbody>
             </table>
         </section>
     </div>
