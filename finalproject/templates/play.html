@@ -7,11 +7,15 @@
 {% block main %}
 
     <form action="/play" method="post">
-        
+
         <div class="form-group">
             <input id="play-page" autocomplete="off" autofocus class="form-control" name="keyword" placeholder="Provide a search keyword" type="text">
         </div>
-
+        
+        <div class="form-group">
+            <input id="play-page" class="form-control" name="email" placeholder="Provide the receiver's email address" type="email">
+        </div>
+        
     </form>
 
 {% endblock %}
