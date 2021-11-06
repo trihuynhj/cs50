@@ -24,6 +24,14 @@
                     (Special characters are ! @ # $ % ^ & * ( ) _ +)
                 </div>
                 <br>
+        
+        {% elif invalid_password == 2 %}
+
+                <div class="small password-check">
+                    The password must contain at least 1 special character.<br>
+                    (Special characters are ! @ # $ % ^ & * ( ) _ +)
+                </div>
+                <br>
     </form>
 
 {% endblock %}
