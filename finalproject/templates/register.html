@@ -47,7 +47,12 @@
                 </div>
                 <br>
         
-        
+        {% else %}
+
+                <div class="container small password-note">
+                    <u>Note</u>: Your password must have a minimum length of 16 characters and contain at least 1 number and 1 special character.
+                </div>
+                <br>
     </form>
 
 {% endblock %}
