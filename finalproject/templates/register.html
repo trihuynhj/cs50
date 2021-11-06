@@ -32,6 +32,15 @@
                     (Special characters are ! @ # $ % ^ & * ( ) _ +)
                 </div>
                 <br>
+        
+        {% elif invalid_password == 3 %}
+
+                <div class="small password-check">
+                    The password must contain at least 1 special symbol.
+                </div>
+                <br>
+        
+        
     </form>
 
 {% endblock %}
