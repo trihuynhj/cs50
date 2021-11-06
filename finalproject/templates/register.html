@@ -16,6 +16,14 @@
         <div class="form-group">
             <input class="form-control" name="confirmation" placeholder="Confirm the password" type="password">
         </div>
+
+        {% if invalid_password == 1 %}
+
+                <div class="small password-check">
+                    The password must contain at least 1 number and 1 special character.<br>
+                    (Special characters are ! @ # $ % ^ & * ( ) _ +)
+                </div>
+                <br>
     </form>
 
 {% endblock %}
