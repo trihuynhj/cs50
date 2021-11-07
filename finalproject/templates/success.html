@@ -12,6 +12,9 @@
             <img alt="{{ response.title }}" src="{{ response.original }}" onerror="imgError(this)">
         </div>
         <br>
+        <form action="/success" method="post">
+            <button class="btn btn-primary" type="submit">Try A Different Keyword</button>
+        </form>
     </div>
 
 {% endblock %}
