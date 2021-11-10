@@ -8,7 +8,8 @@ from flask import redirect, render_template, request, session
 from functools import wraps
 from serpapi import GoogleSearch
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+from email.mime.    multipart import MIMEMultipart
+
 
 def error(message, code=400):
     """Render an error message to user."""
@@ -23,3 +24,11 @@ def error(message, code=400):
             s = s.replace(old, new)
         return s
     return render_template("error.html", top=code, bottom=escape(message)), code
+
+
+def login_required(f):
+    """
+    Decorate routes to require login.
+
+    https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
+    """
