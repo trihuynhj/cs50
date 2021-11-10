@@ -9,3 +9,12 @@ from functools import wraps
 from serpapi import GoogleSearch
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+def error(message, code=400):
+    """Render an error message to user."""
+    def escape(s):
+        """
+        Escape special characters.
+        
+        https://github.com/jacebrowning/memegen#special-characters
+        """
