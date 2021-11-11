@@ -70,4 +70,5 @@ def random_image(keyword, search_history, safesearch=0):
             "safe": "off",
             "api_key": API_KEY
         }
-        
+        if safesearch == 1:
+            params["safe"] = "active"
