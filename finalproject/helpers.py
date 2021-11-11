@@ -40,3 +40,6 @@ def login_required(f):
     return decorated_function
 
 
+# Contact SerpAPI, search images and return a random image from the search result
+def random_image(keyword, search_history, safesearch=0):
+    """Return search results from SerpAPI."""
