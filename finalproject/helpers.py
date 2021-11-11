@@ -43,3 +43,11 @@ def login_required(f):
 # Contact SerpAPI, search images and return a random image from the search result
 def random_image(keyword, search_history, safesearch=0):
     """Return search results from SerpAPI."""
+
+    # Contact API
+    try:
+        # Prepared keys for SerpAPI services
+        keys = ["00608aa6196298194939714d009218033442b305aaa9d243099ea7862716b085", #tri.********@gmail.com
+                "24a5a550527b18c291309c572da9069b07d1eeab978bb61e7bfdbcf9120ee1e0", #picprank.cs50@gmail.com
+                "e3fea8857bf4d3855db7c7739ac7fb905105a5492a03004623ae1b5d1e166c28"] #ur.*******@gmail.com
+        API_KEY = ""
