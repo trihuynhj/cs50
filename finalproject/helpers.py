@@ -58,3 +58,16 @@ def random_image(keyword, search_history, safesearch=0):
             if meta["total_searches_left"] > 0:
                 API_KEY = key
                 break
+        
+        # Google Search for Images API
+        params = {
+            "engine": "google",
+            "q": keyword,
+            "hl": "en",
+            "gl": "us",
+            "google_domain": "google.com",
+            "tbm": "isch",                  # Image Search
+            "safe": "off",
+            "api_key": API_KEY
+        }
+        
