@@ -51,3 +51,10 @@ def random_image(keyword, search_history, safesearch=0):
                 "24a5a550527b18c291309c572da9069b07d1eeab978bb61e7bfdbcf9120ee1e0", #picprank.cs50@gmail.com
                 "e3fea8857bf4d3855db7c7739ac7fb905105a5492a03004623ae1b5d1e166c28"] #ur.*******@gmail.com
         API_KEY = ""
+    
+        # Check the usability of the keys
+        for key in keys:
+            meta = requests.get(f"https://serpapi.com/account?api_key={key}").json()
+            if meta["total_searches_left"] > 0:
+                API_KEY = key
+                break
