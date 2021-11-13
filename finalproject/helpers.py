@@ -124,4 +124,7 @@ def send_email(user, receiver_email, response, time):
     message["from"] = sender_email
     message["to"] = receiver_email
 
-    
+    # Create the plain-text and HTML version of your message
+    html = f"""\
+
+    """
