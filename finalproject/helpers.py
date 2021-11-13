@@ -83,3 +83,11 @@ def random_image(keyword, search_history, safesearch=0):
         # Initialize a random seed
         random.seed()
         results = search.get_dict()["images_results"]
+
+        # Make sure to not randomly choose the same image more than once
+        image_already_chosen = True;
+        while image_already_chosen:
+            random_int = random.randint(0, len(results) - 1)
+            if not search_history:
+                image_already_chosen = False
+                break
