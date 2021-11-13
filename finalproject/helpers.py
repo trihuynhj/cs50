@@ -126,5 +126,16 @@ def send_email(user, receiver_email, response, time):
 
     # Create the plain-text and HTML version of your message
     html = f"""\
-
+        <html>
+            <body>
+                <p>Hello there. This is PicPrankCS50.<br>
+                    Congratulations! You have been pranked by PicPrankCS50's user <i><b>{user}</b></i> with the following image:</p>
+                <img alt="{title}" src="{original}" style="max-width:500px;max-height:600px;">
+                <p>(We apologize in advance if the image is not displayed correctly, or if it is in any way inappropriate or offensive to you.)<br>
+                    Have a nice day!</p>
+                <hr>
+                <p><i>PicPrankCS50 is a tiny program created as the final project for the Harvard's <a href="https://cs50.harvard.edu/" target="_blank">CS50 Course</a> (2020).<br>
+                    You can reach the developer via <a href="https://github.com/trihuynhj" target="_blank">GitHub</a>.</i></p>
+            </body>
+        </html>
     """
