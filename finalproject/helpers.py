@@ -91,3 +91,6 @@ def random_image(keyword, search_history, safesearch=0):
             if not search_history:
                 image_already_chosen = False
                 break
+            for search in search_history:
+                if random_int != search["result_position"]:
+                    image_already_chosen = False
