@@ -77,3 +77,9 @@ def random_image(keyword, search_history, safesearch=0):
     
     except requests.RequestException:
         return None
+
+    # Parse response
+    try:
+        # Initialize a random seed
+        random.seed()
+        results = search.get_dict()["images_results"]
