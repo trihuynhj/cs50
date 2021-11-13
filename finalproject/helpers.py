@@ -119,4 +119,9 @@ def send_email(user, receiver_email, response, time):
     sender_email = "picprank.cs50@gmail.com"
     sender_password = "Thisiscs50#"
 
+    message = MIMEMultipart("alternative")
+    message["Subject"] = f"From PicPrankCS50 at {time}"
+    message["from"] = sender_email
+    message["to"] = receiver_email
+
     
