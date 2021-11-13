@@ -94,3 +94,12 @@ def random_image(keyword, search_history, safesearch=0):
             for search in search_history:
                 if random_int != search["result_position"]:
                     image_already_chosen = False
+        
+        response = results[random_int]
+        return {
+            "position": response["position"],
+            "title": response["title"],
+            "link": response["link"],
+            "original": response["original"],
+            "thumbnail": response["thumbnail"]
+        }
