@@ -72,3 +72,8 @@ def random_image(keyword, search_history, safesearch=0):
         }
         if safesearch == 1:
             params["safe"] = "active"
+
+        search = GoogleSearch(params)
+    
+    except requests.RequestException:
+        return None
