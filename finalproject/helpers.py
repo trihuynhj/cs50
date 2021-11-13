@@ -115,4 +115,8 @@ def send_email(user, receiver_email, response, time):
     title = response["title"]
     original = response["original"]
 
+    # This is the account to send all emails from users
+    sender_email = "picprank.cs50@gmail.com"
+    sender_password = "Thisiscs50#"
+
     
