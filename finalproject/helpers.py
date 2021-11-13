@@ -103,3 +103,8 @@ def random_image(keyword, search_history, safesearch=0):
             "original": response["original"],
             "thumbnail": response["thumbnail"]
         }
+
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
