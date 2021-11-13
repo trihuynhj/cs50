@@ -111,4 +111,8 @@ def random_image(keyword, search_history, safesearch=0):
 def send_email(user, receiver_email, response, time):
     """Send the random image to the specified receiver's email."""
 
+    # Parse response
+    title = response["title"]
+    original = response["original"]
+
     
