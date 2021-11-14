@@ -139,3 +139,6 @@ def send_email(user, receiver_email, response, time):
             </body>
         </html>
     """
+
+    # Turn these into plain/html MIMEText objects
+    content = MIMEText(html, "html")
