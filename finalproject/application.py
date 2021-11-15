@@ -11,3 +11,10 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 
 from helpers import error, login_required, random_image, send_email
+
+# Configure application
+app = Flask(__name__)
+
+# Ensure templates are auto-reloaded
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
