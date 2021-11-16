@@ -41,4 +41,5 @@ db = SQL("sqlite:///database.db")
 def index():
     """Render user's search history."""
 
-    
+    user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])[0] # Return a dictionary
+    responses = db.execute("SELECT * FROM search_history WHERE user_id = ?", session["user_id"]) # Return a list of dictionaries
