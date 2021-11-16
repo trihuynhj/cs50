@@ -34,3 +34,7 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///database.db")
+
+# Index page: shows user's info (history, number of searchs left etc.)
+@app.route("/")
+@login_required
