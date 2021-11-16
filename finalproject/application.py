@@ -38,3 +38,7 @@ db = SQL("sqlite:///database.db")
 # Index page: shows user's info (history, number of searchs left etc.)
 @app.route("/")
 @login_required
+def index():
+    """Render user's search history."""
+
+    
