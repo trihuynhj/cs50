@@ -57,4 +57,6 @@ def register():
             return error("must provide a username", 400)
         if not request.form.get("password"):
             return error("must provide a password", 400)
+        if not request.form.get("confirmation"):
+            return error("must provide a password confirmation", 400)
         
