@@ -45,3 +45,7 @@ def index():
     responses = db.execute("SELECT * FROM search_history WHERE user_id = ?", session["user_id"]) # Return a list of dictionaries
     return render_template("index.html", user=user, responses=responses)
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """Register user"""
+    
