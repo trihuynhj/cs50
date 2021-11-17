@@ -48,4 +48,10 @@ def index():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    
+
+    # Check and make sure the password contain at least 1 number and 1 special symbol
+
+    # When getting a POST method, check and process the user registration info
+    if request.method == "POST":
+        if not request.form.get("username"):
+            return error("must provide a username", 400)
