@@ -59,4 +59,6 @@ def register():
             return error("must provide a password", 400)
         if not request.form.get("confirmation"):
             return error("must provide a password confirmation", 400)
-        
+        if db.execute("SELECT username FROM users WHERE username = ?", request.form.get("username")):
+            return error("username has already been registered", 400)
+            
