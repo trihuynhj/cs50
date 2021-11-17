@@ -55,3 +55,6 @@ def register():
     if request.method == "POST":
         if not request.form.get("username"):
             return error("must provide a username", 400)
+        if not request.form.get("password"):
+            return error("must provide a password", 400)
+        
