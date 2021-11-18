@@ -105,4 +105,7 @@ def send():
         if int(search_limit[0]["search_allowed"]) <= 0:
             return error("your account has reached the search limit (10 searches), create a new account to play", 400)
 
+        search_key = request.form.get("keyword")
+        receiver_email = request.form.get("email")
+        safesearch = 1
         
