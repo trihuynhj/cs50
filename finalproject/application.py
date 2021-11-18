@@ -68,4 +68,9 @@ def register():
         user_password = request.form.get("password")
         if len(user_password) < 16:
             return render_template("register.html", invalid_password=4)
-            
+        
+        check_number = re.findall("[0-9]", user_password)
+        check_symbol = re.findall("[!@#$%^&*()_+]", user_password)
+        if not check_number and not check_symbol:
+            return render_template("register.html", invalid_password=1)
+        
