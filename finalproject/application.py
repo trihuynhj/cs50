@@ -99,4 +99,6 @@ def about():
 def send():
     """Send a random image to the receiver's email"""
 
-    
+    if request.method == "POST":
+        # Check user account's limit
+        
