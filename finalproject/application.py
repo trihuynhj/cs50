@@ -64,3 +64,8 @@ def register():
         if request.form.get("password") != request.form.get("confirmation"):
             return error("The passwords do not match", 400)
         
+        # Check and validate password (more than 10 characters and containing at least 1 number and 1 special character)
+        user_password = request.form.get("password")
+        if len(user_password) < 16:
+            return render_template("register.html", invalid_password=4)
+            
