@@ -101,4 +101,8 @@ def send():
 
     if request.method == "POST":
         # Check user account's limit
+        search_limit = db.execute("SELECT search_allowed FROM users WHERE id = ?", session["user_id"])
+        if int(search_limit[0]["search_allowed"]) <= 0:
+            return error("your account has reached the search limit (10 searches), create a new account to play", 400)
+
         
