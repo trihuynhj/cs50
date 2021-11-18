@@ -73,4 +73,5 @@ def register():
         check_symbol = re.findall("[!@#$%^&*()_+]", user_password)
         if not check_number and not check_symbol:
             return render_template("register.html", invalid_password=1)
-        
+        elif check_number and not check_symbol:
+            return render_template("register.html", invalid_password=2)
