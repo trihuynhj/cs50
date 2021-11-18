@@ -92,3 +92,11 @@ def register():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/play", methods=["GET", "POST"])
+@login_required
+def send():
+    """Send a random image to the receiver's email"""
+
+    
