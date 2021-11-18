@@ -75,3 +75,5 @@ def register():
             return render_template("register.html", invalid_password=1)
         elif check_number and not check_symbol:
             return render_template("register.html", invalid_password=2)
+        elif not check_number and check_symbol:
+            return render_template("register.html", invalid_password=3)
