@@ -77,3 +77,9 @@ def register():
             return render_template("register.html", invalid_password=2)
         elif not check_number and check_symbol:
             return render_template("register.html", invalid_password=3)
+        else:
+            user_username = request.form.get("username")
+            user_hash = generate_password_hash(user_password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", user_username, user_hash)
+
+            
