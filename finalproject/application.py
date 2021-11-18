@@ -82,4 +82,9 @@ def register():
             user_hash = generate_password_hash(user_password)
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", user_username, user_hash)
 
-            
+            return render_template("login.html")
+
+    # Otherwise (received a GET method), render the register page
+    else:
+        return render_template("register.html", invalid_password=0)
+
