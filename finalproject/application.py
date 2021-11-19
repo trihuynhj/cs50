@@ -108,4 +108,7 @@ def send():
         search_key = request.form.get("keyword")
         receiver_email = request.form.get("email")
         safesearch = 1
+        if request.form.get("safe-search") is None:
+            safesearch = 0
+
         
