@@ -120,4 +120,9 @@ def send():
             return error("could not contact API", 400)
         elif not response:
             return error("no images found", 400)
-        
+        else:
+            # Check for a bad URL, if so return the error page
+            check_original = requests.get(response["original"]).status_code
+            check_thumbnail = requests.get(response["thumbnail"]).status_code
+            check_link = requests.get(response["link"]).status_code
+            
