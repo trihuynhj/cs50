@@ -131,4 +131,8 @@ def send():
              # Get the current time
             time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
 
+            # Send the email via smtplib
+            user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
+            send_email(user, receiver_email, response, time)
+
             
