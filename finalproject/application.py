@@ -111,4 +111,8 @@ def send():
         if request.form.get("safe-search") is None:
             safesearch = 0
 
+        # Get a random search result from API (make sure to not choose an image twice)
+        search_history = db.execute("SELECT * FROM search_history WHERE user_id = ?", session["user_id"])
+        response = random_image(search_key, search_history, safesearch)
+
         
