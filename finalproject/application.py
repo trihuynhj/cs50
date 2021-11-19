@@ -115,4 +115,7 @@ def send():
         search_history = db.execute("SELECT * FROM search_history WHERE user_id = ?", session["user_id"])
         response = random_image(search_key, search_history, safesearch)
 
+        # Validate and render the image via success page
+        if response is None:
+            return error("could not contact API", 400)
         
