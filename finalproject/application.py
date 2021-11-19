@@ -135,4 +135,9 @@ def send():
             user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
             send_email(user, receiver_email, response, time)
 
+            # Update account data
+            db.execute("UPDATE users SET search_allowed = search_allowed - 1 WHERE id = ?", session["user_id"])
+            db.execute("INSERT INTO search_history (user_id, keyword, receiver_email, safesearch, result_position, result_title, result_link, result_original, result_thumbnail, time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                       session["user_id"], search_key, receiver_email, safesearch, response["position"], response["title"], response["link"], response["original"], response["thumbnail"], time)
+            
             
