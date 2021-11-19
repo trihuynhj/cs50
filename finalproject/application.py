@@ -128,4 +128,7 @@ def send():
             if check_original >= 400 or check_thumbnail >= 400 or check_link >= 400:
                 return error("could not access image sources\nplease try again", 400)
             
+             # Get the current time
+            time = datetime.utcnow().strftime("%Y/%m/%d %H:%M:%S")
+
             
