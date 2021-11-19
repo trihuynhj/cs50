@@ -125,4 +125,7 @@ def send():
             check_original = requests.get(response["original"]).status_code
             check_thumbnail = requests.get(response["thumbnail"]).status_code
             check_link = requests.get(response["link"]).status_code
+            if check_original >= 400 or check_thumbnail >= 400 or check_link >= 400:
+                return error("could not access image sources\nplease try again", 400)
+            
             
