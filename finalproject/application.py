@@ -118,4 +118,6 @@ def send():
         # Validate and render the image via success page
         if response is None:
             return error("could not contact API", 400)
+        elif not response:
+            return error("no images found", 400)
         
