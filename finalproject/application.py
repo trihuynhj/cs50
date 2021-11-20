@@ -156,4 +156,9 @@ def success():
         return redirect("/play")
 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """Log user in"""
 
+    # Forget any user_id
+    session.clear()
