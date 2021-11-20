@@ -140,4 +140,10 @@ def send():
             db.execute("INSERT INTO search_history (user_id, keyword, receiver_email, safesearch, result_position, result_title, result_link, result_original, result_thumbnail, time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                        session["user_id"], search_key, receiver_email, safesearch, response["position"], response["title"], response["link"], response["original"], response["thumbnail"], time)
             
-            
+            # Render success page
+            return render_template("success.html", response=response, receiver_email=receiver_email)
+    
+    else:
+        return render_template("play.html")
+
+
