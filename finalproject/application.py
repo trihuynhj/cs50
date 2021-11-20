@@ -147,3 +147,9 @@ def send():
         return render_template("play.html")
 
 
+@app.route("/success", methods=["POST"])
+@login_required
+def success():
+    """Redirect to /play."""
+
+    
