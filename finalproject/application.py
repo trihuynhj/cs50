@@ -152,4 +152,8 @@ def send():
 def success():
     """Redirect to /play."""
 
-    
+    if request.method == "POST":
+        return redirect("/play")
+
+
+
