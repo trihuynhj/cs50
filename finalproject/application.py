@@ -170,4 +170,6 @@ def login():
         if not request.form.get("username"):
             return error("must provide a username", 400)
         
-        
+        # Ensure password was submitted
+        elif not request.form.get("password"):
+            return error("must provide a password", 400)
