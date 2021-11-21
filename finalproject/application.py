@@ -192,3 +192,9 @@ def login():
         return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    """Log user out"""
+
+    # Forget any user_id
+    session.clear()
