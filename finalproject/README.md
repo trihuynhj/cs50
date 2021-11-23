@@ -7,3 +7,5 @@
 
 3. **Implementation Detail**:
     - application.py: This file contains all the code that sets up and controls behaviors of the program. It is implemented with the Flask framework (including Flask's Session for user registration, login/logout). I took the inspiration from Problem Set 9 (Finance) and reused some of its initialization code in this file. As the main part, it governs the functionality of all HTML pages (from the templates folder, detail for each page is explained below). It also inherits from Finance other essential code such as generate_password_hash, check_password_hash, error handling etc.
+
+    - helpers.py: Similar to the file with the same name in Problem Set 9, this file’s purpose is to provide some helper functions to the application.py file. 
