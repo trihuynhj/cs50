@@ -11,4 +11,4 @@
     - helpers.py: Similar to the file with the same name in Problem Set 9, this file’s purpose is to provide some helper functions to the application.py file.Declaring helper functions separately helps with code organizing and coherence.
         - error() behaves the same as apology() in Finance, but another cat image is being used to show the message to the user. And of course the escape function (from <https://github.com/jacebrowning/memegen#special-characters>) is reused as well.
         - login_required(): same as Finance, decorate routes that require user login.
-        
+        - random_image(): this function is one of the core action of the program. 
