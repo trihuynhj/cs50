@@ -18,4 +18,4 @@
 
     - /templates: As the convention for a Flask web application, all the HTML pages are being stored in this /templates folder.
         - layout.html: This is basically the backbone of the application's UI. It is not being used directly in any path in the program, but is implemented so that other pages (routes) can inherit. This way, all the HTML pages will have a consistent appearance.
-        - index.html: This is the "/" route. User will be taken to this page once they've logged in. On the web application, it is actually displayed as the "Main Page". 
+        - index.html: This is the "/" route. User will be taken to this page once they've logged in. On the web application, it is actually displayed as the "Main Page". Unlike the Finance app, this page not only shows the user account information, but also their activity (i.e. detailed search history).
