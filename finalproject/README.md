@@ -22,4 +22,4 @@
         - register.html: This is for user to register an account. In order to use the service, visitors must register for an account. This time, to improve on my implementation from Finance app, the register is programmed so that visitors must use a strong password, as in at least 16 characters, containing at least 1 number and 1 special character. Detailed implementation can be found at "/register" route in application.py.
         - login.html: This implementation is simple and exactly the same as Finance app. It is implemented with Flask's Session, then the user_id will be stored in the session.
         - about.html: This page is mostly to introduce the application, how it is implemented, what it does, and how to use it. It contains just some basic HTML/CSS.
-        
+        - play.html: This page is the juiciest part of the whole application. It allows the user to enter a search keyword and an email address. 
