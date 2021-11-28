@@ -28,4 +28,4 @@
 
     - /static: This folder contains only 2 files, styles.css and scripts.js
         - styles.css: This file is to set the CSS styling for the whole application.
-        
+        - scripts.js: I only implemented 1 JavaScript function for this program, which is called imgError().
