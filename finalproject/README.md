@@ -27,3 +27,5 @@
         - success.html: As explained in play.html, the user will be taken to this page after they have completed a search (as by clicking the button "Prank' em!" at "/play"). It shows the user the randomly chosen image that has been sent to receiver's email address. It is also implemented with a button called "Try A Different Keyword" to go back to the "/play" route (user can use this button, or use the button on the menu bar, it works exactly the same). Also, the user should be aware that while being at this page, if they press the F5 button, the program will use the same search keyword and email address previously provided to make another play, i.e. get a random image via API, send it to the email address, and redirect the user to a new "/success" route.
 
     - /static: This folder contains only 2 files, styles.css and scripts.js
+        - styles.css: This file is to set the CSS styling for the whole application.
+        
