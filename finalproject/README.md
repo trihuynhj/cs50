@@ -28,4 +28,4 @@
 
     - /static: This folder contains only 2 files, styles.css and scripts.js
         - styles.css: This file is to set the CSS styling for the whole application.
-        - scripts.js: I only implemented 1 JavaScript function for this program, which is called imgError().
+        - scripts.js: I only implemented 1 JavaScript function for this program, which is called imgError(). It is to check for the error in displaying the sent image at "/success" route. Because when testing the program, I encountered a strange issue. 
