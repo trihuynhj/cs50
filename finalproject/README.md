@@ -32,4 +32,4 @@
     
     - Tests Files: During the development of this web application, in order to really understand how to implement an idea, I decided to make some separate files to test out a function, a Python's library, or an API. I thought these files might be served as a milestone showing my progression, so I've decided not to delete, but to consider them as parts of the development.
         - test.py: This program is to test the ability to send emails with Python's SMTP and MIME libraries.
-        - test1.py: This program is to try Python's Regular Expression (RegEx) for the implementation of password checking at "/register" route. I have a little experience with RegEx some time ago when learning the freeCodeCamp's interactive lecture, but I have always found it to be confusing and very hard to grasp..
+        - test1.py: This program is to try Python's Regular Expression (RegEx) for the implementation of password checking at "/register" route. I have a little experience with RegEx some time ago when learning the freeCodeCamp's interactive lecture, but I have always found it to be confusing and very hard to grasp.. But I guess I've done okay with it.
