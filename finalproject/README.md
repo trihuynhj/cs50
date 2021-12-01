@@ -38,4 +38,4 @@
         - test4.py: A tiny program to test Python's requests module.
 
 4. **About Me**:
-    - My name is Tri Huynh. I'm originally from Vietnam, but currently living in Tokyo, Japan. 
+    - My name is Tri Huynh. I'm originally from Vietnam, but currently living in Tokyo, Japan. You can reach me via my GitHub at <https://github.com/trihuynhj>.
