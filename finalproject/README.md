@@ -34,3 +34,4 @@
         - test.py: This program is to test the ability to send emails with Python's SMTP and MIME libraries.
         - test1.py: This program is to try Python's Regular Expression (RegEx) for the implementation of password checking at "/register" route. I have a little experience with RegEx some time ago when learning the freeCodeCamp's interactive lecture, but I have always found it to be confusing and very hard to grasp.. But I guess I've done okay with it.
         - test2.py: This program is to try using SerpAPI services and figuring out how it works. I had a very fun time implementing this function. I guess this is exactly what people are looking for taking the programming path. Despite a lot of boring stuff, tons of confusion and frustration, the satisfaction from finally figuring it out and successfully implementing your idea programmatically is really worth the effort.
+        - test3.py: A tiny program to test Python's random module.
